@@ -1,16 +1,6 @@
- /* it is for all sections 
- box-sizing Specifies the behavior of the 'width' and 'height' properties.  */
- 
- * {
-    margin: 0em;
-    padding: 0em;
-    box-sizing: content-box;
-}
-/* font family setted 
-our display is flex and our iterms are aligned to center 
-image covering all the webpage with no repeat and fixed and  */
 
 body {
+    box-sizing: content-box;
     display: grid;
     font-family: fantasy;
     background-image: url('background_giga.jpg');
@@ -19,10 +9,9 @@ body {
     background-repeat: repeat;
     align-items: center;
     justify-content: center;
-    
+    /* controls the backgroudn image and creates the container box */
 }
-/* main component in the center of the page.
-It uses grid display with two columns with opacity*/
+
 
 .on_screen {
     height: 80%;
@@ -34,15 +23,16 @@ It uses grid display with two columns with opacity*/
     margin: 1rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    opacity: 0.7;
+    opacity: 0.6;
     justify-content: left;
     align-items: center;
     margin-top: 170px;
     margin-bottom: -100px;
+    /* parent class for the contents of the container box and manages the grid */
     
     
 }
-/* using flex for centering contetnt of each column.*/
+
 
 .alignment {
     height: 100%;
@@ -50,71 +40,96 @@ It uses grid display with two columns with opacity*/
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-top: 0px; */
+    /* controls the overall alignment of both the right and the left elements */
 }
-/*left container must have block display */
+
 
 .align_left {
-    display: block;
+    display: flex;
     margin: 5px;
+    justify-content: left;
+    /* controls the input buttons, gender type and the input bar */
+    
 }
-/*right container must have block display */
+
 
 .align_right {
     display: block;
-    margin: 5px;
-    margin-top: 0px;
-    /* justify-content: space-evenly; */
+    margin: 0px;
+    /* controls the prediction and the delete box alignment */
 }
-/*prediction section where we have percent and gender */
+
 
 .prediction {
     margin-bottom: 100px;
     flex: 1;
     overflow: auto;
+    /* label for the prediction outcome */
 }
-/*the box wich contains saved gender and remove button */
 
-.right-box {
+
+.delete-box {
     border-style: inset;
     border-width: 5px;
-    padding: 0px;
+    padding: 10px;
     margin-top: 0px;
+    /* a box containing the delete button */
 }
-/* modify text input style */
+
 
 .selection {
     width: 100%;
     height: 40px;
     background: grey;
     border-radius: 4px;
-    border: 1px solid rgb(54, 11, 211);
+    border: 3px dashed rgb(54, 11, 211);
+    box-shadow: 0 16px 16px rgba(63, 14, 197, 0.25);
     margin: 10px 0 20px 0;
     padding: 0 10px;
+    /* the main input bar */
+    
 }
-/* button styles */
 
 .button {
-    margin-left: 50%;
+    margin-left: 25%;
     transform: translateX(-50%);
     margin-bottom: 5px;
     margin-top: 5px;
-    width: 100px;
-    height: 30px;
-    border: none;
-    outline: none;
+    width: 150px;
+    height: 50px;
+    border: solid;
+    outline: dashed;
     background: rgb(17, 196, 10);
-    box-shadow: 0 16px 16px rgba(73, 170, 70, 0.5);
+    box-shadow: 0 16px 16px rgba(73, 170, 70, 0.75);
     cursor: crosshair;
     font-size: 15px;
     color: white;
-    border-radius: 3px;
+    border-radius: 6px;
+    /* settings for the input buttons */
 }
-/* set style for radio input */
+
+.button2 {
+    margin-left: 35%;
+    transform: translateX(-50%);
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 150px;
+    height: 50px;
+    border: solid;
+    outline: dashed;
+    background: rgb(17, 196, 10);
+    box-shadow: 0 16px 16px rgba(73, 170, 70, 0.75);
+    cursor: crosshair;
+    font-size: 15px;
+    color: white;
+    border-radius: 6px;
+    /* settings for the delete button */
+}
+
 
 .radiobutton {
-    margin: 0px;
-    display: inline-block;
+    margin: 10px;
+    display: flex;
 }
 /*styles of the texts return when submit button clicked*/
 
@@ -123,12 +138,16 @@ It uses grid display with two columns with opacity*/
     justify-content: center;
     text-align: center;
 }
-/*lable must have block display */
+
 
 label {
     display: block;
     margin: 3px;
 }
 /* setting some margin for paragraphs */
+
+p {
+    margin: 25px;
+}
 
 

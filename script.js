@@ -20,7 +20,7 @@ var username_saved = "";
 if(document.getElementById('submit').clicked == true)
 {
     gender_status = document.querySelector('#gender-status');
-    var username = document.getElementsByName('txtJob')[0].value;
+    var username = document.getElementById("name").value;
     if (stringcheck(username) == true & gender_status == "male"){
         gender_saved = gender_status;
         username_saved = username;
@@ -30,8 +30,11 @@ if(document.getElementById('submit').clicked == true)
         username_saved = username;
     }
     else if (stringcheck(username) == true){
-        
+
     }
 }
 
-
+if(document.getElementById('delete').clicked == true){
+    var username = document.getElementById("name").value;
+    localStorage.removeItem(username); 
+}

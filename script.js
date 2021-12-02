@@ -14,6 +14,8 @@ function stringcheck(input_string){
     /* function made for checking the only letters condition */
 }
 
-
+function recieve(){
+    var input_name = document.getElementById("name").value;
+}
 
 

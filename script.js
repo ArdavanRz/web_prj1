@@ -34,6 +34,13 @@ if(document.getElementById('submit').clicked == true)
     }
 }
 
+if(document.getElementById('save').clicked == true){
+    if(localStorage.getItem(username_saved) !== null){
+        
+    localStorage.setItem(username_saved, gender_saved);
+    }
+}
+
 if(document.getElementById('delete').clicked == true){
     var username = document.getElementById("name").value;
     localStorage.removeItem(username); 

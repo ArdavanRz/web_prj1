@@ -19,7 +19,7 @@ var username_saved = "";
 
 if(document.getElementById('submit').clicked == true)
 {
-    gender_status = document.querySelector('#gender-status');
+    var gender_status = document.querySelector('#gender-status');
     var username = document.getElementById("name").value;
     if (stringcheck(username) == true & gender_status == "male"){
         gender_saved = gender_status;
@@ -30,14 +30,21 @@ if(document.getElementById('submit').clicked == true)
         username_saved = username;
     }
     else if (stringcheck(username) == true){
+        web_req = httpGet(`https://api.genderize.io/?name=${username}`);
+        resolve = JSON.parse(web_req);
+        gender_saved = resobj["gender"];
+        username_saved = resobj["name"];
+
+
 
     }
 }
 
 if(document.getElementById('save').clicked == true){
     if(localStorage.getItem(username_saved) !== null){
-        
     localStorage.setItem(username_saved, gender_saved);
+    var oper = document.querySelector('#answer_saved');
+    oper.innerText = username_saved;
     }
 }
 
